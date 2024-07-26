@@ -8,9 +8,9 @@
       <div class="row">
         <div class="col">
           <mat-form-field hintLabel="Einloggen mit Nutzername und Passwort" class="full-width">
-            <input matInput placeholder="Nutzername" formControlName="username">
-            <mat-icon matSuffix >person_add</mat-icon>
-            <mat-error *ngIf="registerForm.controls['username'].hasError('required')">
+            <input matInput placeholder="Nutzername eingeben" formControlName="username" aria-describedby="username-error">
+            <mat-icon matSuffix aria-hidden="true">person_add</mat-icon>
+            <mat-error id="username-error" *ngIf="registerForm.controls['username'].hasError('required')">
               Nutzername <strong>erforderlich</strong>
             </mat-error>
           </mat-form-field>
@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col">
           <mat-form-field hintLabel="Mind. 8 Zeichen, mind. 1 Groß- und Kleinbuchstaben, Ziffer und Sonderzeichen" class="full-width">
-            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Passwort" formControlName="password">
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Passwort eingeben" formControlName="password">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
