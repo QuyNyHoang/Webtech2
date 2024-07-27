@@ -66,4 +66,5 @@ export class RegisterComponent {
     openDialog(data: DialogData) {
       this.dialog.open(ConfirmComponent, { data });
   }
+
 }
