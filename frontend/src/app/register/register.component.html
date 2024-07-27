@@ -19,11 +19,11 @@
       <div class="row">
         <div class="col">
           <mat-form-field hintLabel="Mind. 8 Zeichen, mind. 1 Groß- und Kleinbuchstaben, Ziffer und Sonderzeichen" class="full-width">
-            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Passwort eingeben" formControlName="password">
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Passwort eingeben" formControlName="password" aria-describedby="password-error">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-            <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+            <mat-error id="password-error" *ngIf="registerForm.controls['password'].hasError('required')">
               Passwort <strong>erforderlich</strong>
             </mat-error>
           </mat-form-field>
@@ -32,11 +32,11 @@
       <div class="row">
         <div class="col">
           <mat-form-field hintLabel="Dasselbe Passwort wie oben" class="full-width">
-            <input matInput  [type]="hide2 ? 'password' : 'text'" placeholder="Passwort wiederholen" formControlName="password2">
+            <input matInput  [type]="hide2 ? 'password' : 'text'" placeholder="Passwort wiederholen" formControlName="password2" aria-describedby="password2-error">
             <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-            <mat-error *ngIf="registerForm.controls['password2'].hasError('required')">
+            <mat-error id="password2-error" *ngIf="registerForm.controls['password2'].hasError('required')">
               Wiederholung Passwort <strong>erforderlich</strong>
             </mat-error>
           </mat-form-field>
@@ -46,9 +46,9 @@
       <div class="row">
         <div class="col">
           <mat-form-field hintLabel="E-Mail-Adresse zum Kontaktieren verwendet" class="full-width">
-            <input matInput placeholder="E-Mail" formControlName="email">
+            <input matInput placeholder="E-Mail" formControlName="email" aria-describedby="email-error">
             <mat-icon matSuffix>email</mat-icon>
-            <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+            <mat-error id="email-error" *ngIf="registerForm.controls['email'].hasError('required')">
               E-Mail-Adresse <strong>erforderlich</strong>
             </mat-error>
           </mat-form-field>
@@ -57,13 +57,13 @@
       <div class="row">
         <div class="col">
           <mat-form-field hintLabel="Wählen Sie eine der beiden Rollen aus" class="full-width">
-            <mat-select placeholder="Rolle" formControlName="role">
+            <mat-select placeholder="Rolle" formControlName="role" aria-describedby="role-error">
               <mat-option *ngFor="let role of roles" [value]="role">
                 {{ role }}
               </mat-option>
             </mat-select>
             <mat-icon matSuffix>group</mat-icon>
-            <mat-error *ngIf="registerForm.controls['role'].hasError('required')">
+            <mat-error id="role-error" *ngIf="registerForm.controls['role'].hasError('required')">
               Rolle <strong>erforderlich</strong>
             </mat-error>
           </mat-form-field>
