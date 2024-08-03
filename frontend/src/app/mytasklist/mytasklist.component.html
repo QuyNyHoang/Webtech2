@@ -1,4 +1,4 @@
-<div *ngIf="!deleted" class="container-fluid mt-0 bg-light p-3 shadow"> <!-- "container" deutet darauf, dass der Code das Raster-System des Bootstrap-Frameworks für responsives Layout verwendt -->
+<section *ngIf="!deleted" class="container-fluid mt-0 bg-light p-3 shadow"> <!-- "container" deutet darauf, dass der Code das Raster-System des Bootstrap-Frameworks für responsives Layout verwendt -->
   <h2 class="m-3">Alle ToDos</h2>
   <div class="d-flex justify-content-center my-3">
     <button type="button" class="btn btn-lg btn-outline-primary btn-block w-50 text-center" (click)="ClickEvent()">Neue ToDo erstellen</button>
@@ -35,12 +35,12 @@
       </tbody>
     </table>
   </div>
-</div>
+</section>
 
-<div *ngIf="deleted" class="container mt-3 bg-light p-3 shadow">
+<section *ngIf="deleted" class="container mt-3 bg-light p-3 shadow">
   <h3>Datensatz wurde gelöscht!</h3>
   <button type="button" class="btn btn-secondary" (click)="reload(false)">Zurück zur Tabelle</button>
-</div>
+</section>
 
 <!-- Z.27: definieren wir einen Routerlink unter Verwendung der _id von todo. Es entsteht der Aufruf der Route /todo/:id, wobei für die :id die entsprechende _id von todo eingesetzt wird -->
 <!-- Z.28: Trash icon wird an Click-Ereignis angemeldet, sobald es angeklickt wird, wird die Methode delete(todo._id) aufgerufen -->
