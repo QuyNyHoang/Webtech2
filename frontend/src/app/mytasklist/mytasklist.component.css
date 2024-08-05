@@ -1,5 +1,8 @@
 @import url('../../../node_modules/bootstrap-icons/font/bootstrap-icons.css');
 
+header {
+  text-align: center; /* Zentriert den Text innerhalb des Headers */
+}
 /* für die icons */
 
 table {
@@ -18,4 +21,7 @@ th, td {
 input[type="checkbox"] {
   width: 20px;
   height: 20px;
+}
+caption {
+  caption-side: top; /* Sicherstellen, dass die Caption oben angezeigt wird */
 }

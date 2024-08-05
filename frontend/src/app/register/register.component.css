@@ -28,3 +28,11 @@ section {
 .col:last-child {
   margin-right: 0;
 }
+header, footer {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+article {
+  margin: 1rem 0;
+}

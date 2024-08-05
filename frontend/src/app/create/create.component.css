@@ -1,0 +1,17 @@
+header {
+  margin-bottom: -2rem; /* Reduziert den Abstand unterhalb des Headers */
+}
+label{
+  font-weight: bold;
+  margin-left: 5px  ;
+}
+
+.form-container {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .form-container {
+    padding: 1rem; /* Reduziert die Padding bei kleinen Bildschirmen */
+  }
+}
