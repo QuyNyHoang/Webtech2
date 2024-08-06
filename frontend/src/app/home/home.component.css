@@ -24,4 +24,11 @@ section p{
   }
 }
 
+/* Stellt sicher, dass der Fokus auf allen interaktiven Elementen gut sichtbar ist */
+a:focus,
+button:focus,
+input:focus {
+  outline: 3px solid #005fcc; /* Farbe und Breite des Fokusrahmens anpassen */
+  outline-offset: 2px; /* Abstand des Rahmens zum Element anpassen */
+}
 

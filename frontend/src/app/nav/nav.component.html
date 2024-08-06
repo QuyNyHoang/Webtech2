@@ -28,7 +28,7 @@
       </button>
       <div *ngIf="isLoggedIn" class="right">
         <span>{{username}} </span>
-        <button mat-icon-button (click)="callLogout()"> <!-- LoggOut Icon-->
+        <button mat-icon-button class="logout-button" (click)="callLogout()"> <!-- LoggOut Icon-->
           <mat-icon>logout</mat-icon>
         </button>
       </div>
