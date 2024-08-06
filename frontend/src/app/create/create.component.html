@@ -1,31 +1,40 @@
-<main class="d-flex min-vh-100">
-  <fieldset class="container mt-0 bg-light p-4 rounded">
+<main class="d-flex min-vh-100 flex-column align-items-center">
+  <!-- Hauptbereich für die Seite -->
+  <header class="container mt-4 bg-light p-4 rounded">
     <h1 class="mb-4">Neue ToDo</h1>
-    <form [formGroup]="form" (ngSubmit)="create()">
-      <div class="row mb-4">
-        <div class="col">
+  </header>
+
+  <!-- Abschnitt für das Formular -->
+  <section class="container mt-0 bg-light p-4 rounded">
+    <form [formGroup]="form" (ngSubmit)="create()" class="form-container">
+      <fieldset>
+        <legend class="visually-hidden">Neue ToDo erstellen</legend>
+
+  <!-- Eingabefeld für Aufgabe -->
+      <div class="form-group mb-4">
           <label class="form-label" for="aufgabe">Aufgabe</label>
           <input type="text" class="form-control" id="aufgabe" placeholder="Was möchtest du erledigen?" formControlName="aufgabeControl" />
         </div>
-      </div>
-      <div class="row mb-4">
-        <div class="col">
+
+  <!-- Eingabefeld für Beschreibung -->
+      <div class="form-group mb-4">
           <label class="form-label" for="beschreibung">Beschreibung</label>
           <input type="text" class="form-control" id="beschreibung" placeholder="Erzähl uns mehr!" formControlName="beschreibungControl" />
-        </div>
       </div>
-      <div class="row mb-4">
-        <div class="col">
+
+ <!-- Eingabefeld für Fälligkeitsdatum -->
+      <div class="form-group mb-4">
           <label class="form-label" for="frist">Fälligkeitsdatum</label>
           <input type="text" class="form-control" id="frist" placeholder="TT.MM.JJJJ HH:MM" formControlName="fristControl" />
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
+
+  <!-- Button-Gruppe für Formularaktionen -->
+        <div class="form-group">
           <button type="submit" class="btn btn-primary me-3">Speichern</button>
           <button type="button" class="btn btn-outline-secondary" (click)="cancel()">Abbrechen</button>
         </div>
-      </div>
+
+      </fieldset>
     </form>
-  </fieldset>
+  </section>
 </main>
