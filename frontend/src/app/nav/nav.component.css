@@ -49,3 +49,7 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
 }
+a[mat-list-item]:focus {
+  outline: 3px solid #005fcc; /* Farbe und Breite des Fokusrahmens anpassen */
+  outline-offset: 2px; /* Abstand des Rahmens zum Element anpassen */
+}

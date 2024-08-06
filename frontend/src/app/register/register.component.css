@@ -36,3 +36,10 @@ header, footer {
 article {
   margin: 1rem 0;
 }
+/* Stellt sicher, dass der Fokus auf allen interaktiven Elementen gut sichtbar ist */
+input:focus,
+button:focus,
+mat-icon-button:focus {
+  outline: 3px solid #005fcc; /* Farbe und Breite des Fokusrahmens anpassen */
+  outline-offset: 2px; /* Abstand des Rahmens zum Element anpassen */
+}
