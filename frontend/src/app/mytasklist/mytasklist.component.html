@@ -30,7 +30,7 @@
           <td>{{ todo.frist }}</td>
           <td>
             <a [routerLink]="['/todo', todo._id]"> <span class="bi bi-pencil-square px-2 text-primary"></span></a> <!-- text-primary ist blaue Farbe -->
-            <span (click)="delete(todo._id)" class="bi bi-trash px-2 text-danger"></span> <!-- text-danger ist rote Farbe -->
+            <span tabindex="0" (click)="delete(todo._id)" class="bi bi-trash px-2 text-danger"></span> <!-- text-danger ist rote Farbe -->
           </td>
           <td class="box">
             <input type="checkbox" (click)="erledigt(todo)" [checked]="todo.erledigt"> <!-- bindet den checked Wert an todo.erledigt, wenn true, wird die Checkbox angeklickt -->

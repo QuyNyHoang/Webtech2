@@ -9,3 +9,9 @@ section {
 mat-card-header {
   margin-bottom: 3%;
 }
+input:focus,
+button:focus,
+mat-icon-button:focus {
+  outline: 3px solid #005fcc; /* Farbe und Breite des Fokusrahmens anpassen */
+  outline-offset: 2px; /* Abstand des Rahmens zum Element anpassen */
+}

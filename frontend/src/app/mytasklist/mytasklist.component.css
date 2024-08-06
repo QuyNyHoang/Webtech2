@@ -25,3 +25,39 @@ input[type="checkbox"] {
 caption {
   caption-side: top; /* Sicherstellen, dass die Caption oben angezeigt wird */
 }
+/* Fokus-Stil für Buttons */
+button:focus {
+  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
+  outline-offset: 2px; /* Abstand des Randes vom Element */
+}
+
+/* Fokus-Stil für Links (Bearbeiten-Symbol) */
+a:focus {
+  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
+  outline-offset: 2px; /* Abstand des Randes vom Element */
+}
+
+/* Fokus-Stil für Löschen-Symbol */
+.button:focus {
+  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
+  outline-offset: 2px; /* Abstand des Randes vom Element */
+}
+
+/* Fokus-Stil für Checkboxen */
+input[type="checkbox"]:focus {
+  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
+  outline-offset: 2px; /* Abstand des Randes vom Element */
+}
+
+/* Optional: Fokus-Stil für Tabellenzellen */
+td:focus,
+th:focus {
+  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
+  outline-offset: 2px; /* Abstand des Randes vom Element */
+}
+
+/* Fokus-Stil für Löschen-Symbol */
+.bi-trash:focus {
+  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
+  outline-offset: 2px; /* Abstand des Randes vom Element */
+}

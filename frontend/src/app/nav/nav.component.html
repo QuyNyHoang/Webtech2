@@ -5,11 +5,11 @@
                [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menü</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="''">Startseite</a>
-      <a mat-list-item [routerLink]="'register'">Registrieren</a>
-      <a mat-list-item [routerLink]="'login'">Einloggen</a>
-      <a mat-list-item [routerLink]="'mytasklist'">Meine ToDos</a>
-      <a mat-list-item [routerLink]="'userlist'">Alle Nutzerinnen</a>
+      <a mat-list-item [routerLink]="''" tabindex="0">Startseite</a>
+      <a mat-list-item [routerLink]="'register'" tabindex="0">Registrieren</a>
+      <a mat-list-item [routerLink]="'login'" tabindex="0">Einloggen</a>
+      <a mat-list-item [routerLink]="'mytasklist'" tabindex="0">Meine ToDos</a>
+      <a mat-list-item [routerLink]="'userlist'" tabindex="0">Alle Nutzerinnen</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -28,7 +28,7 @@
       </button>
       <div *ngIf="isLoggedIn" class="right">
         <span>{{username}} </span>
-        <button mat-icon-button (click)="callLogout()"> <!-- LoggOut Icon-->
+        <button mat-icon-button class="logout-button" (click)="callLogout()"> <!-- LoggOut Icon-->
           <mat-icon>logout</mat-icon>
         </button>
       </div>
