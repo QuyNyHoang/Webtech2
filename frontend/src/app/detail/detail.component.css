@@ -6,3 +6,14 @@ main {
 legend {
   font-weight: bold;
 }
+/* Fokusring für Input-Felder */
+input:focus {
+  outline: 3px solid #005fcc; /* Farbe und Breite des Fokusrahmens anpassen */
+
+}
+
+/* Fokusring für Buttons */
+button:focus {
+  outline: 3px solid #005fcc; /* Farbe und Breite des Fokusrahmens anpassen */
+
+}
