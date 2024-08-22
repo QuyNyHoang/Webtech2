@@ -9,6 +9,17 @@ label{
 .form-container {
   width: 100%;
 }
+/* Fokusring für Input-Felder */
+input:focus {
+  outline: 3px solid #005fcc; /* Farbe und Breite des Fokusrahmens anpassen */
+
+}
+
+/* Fokusring für Buttons */
+button:focus {
+  outline: 3px solid #005fcc; /* Farbe und Breite des Fokusrahmens anpassen */
+
+}
 
 @media (max-width: 767px) {
   .form-container {
