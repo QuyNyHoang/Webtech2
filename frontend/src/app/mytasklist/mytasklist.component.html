@@ -5,7 +5,7 @@
   </header>
 
   <div class="d-flex justify-content-center my-3">
-    <button type="button" class="btn btn-lg btn-outline-primary btn-block w-50 text-center" (click)="ClickEvent()">Neue ToDo erstellen</button>
+    <button id="startseite-button-id" type="button" class="btn btn-lg btn-outline-primary btn-block w-50 text-center" (click)="ClickEvent()">Neue ToDo erstellen</button>
   </div>
   <div class="table-responsive mx-3"> <!-- RWD eingebaut -->
     <table class="table table-bordered table-striped table-hover text-left"> <!-- text-left macht es linksbündig -->
@@ -29,11 +29,13 @@
           <td>{{ todo.beschreibung }}</td>
           <td>{{ todo.frist }}</td>
           <td>
-            <a [routerLink]="['/todo', todo._id]"> <span class="bi bi-pencil-square px-2 text-primary"></span></a> <!-- text-primary ist blaue Farbe -->
+            <a id="edit-{{i}}" [routerLink]="['/todo', todo._id]">
+              <span tabindex="0" class="bi bi-pencil-square px-2 text-primary"></span>
+            </a> <!-- text-primary ist blaue Farbe -->
             <span tabindex="0" (click)="delete(todo._id)" class="bi bi-trash px-2 text-danger"></span> <!-- text-danger ist rote Farbe -->
           </td>
           <td class="box">
-            <input type="checkbox" (click)="erledigt(todo)" [checked]="todo.erledigt"> <!-- bindet den checked Wert an todo.erledigt, wenn true, wird die Checkbox angeklickt -->
+            <input id="todo-checkbox-{{i}}"  type="checkbox" (click)="erledigt(todo)" [checked]="todo.erledigt"> <!-- bindet den checked Wert an todo.erledigt, wenn true, wird die Checkbox angeklickt -->
           </td>
         </tr>
       </tbody>
@@ -47,7 +49,7 @@
   </header>
 
   <div>
-  <button type="button" class="btn btn-secondary" (click)="reload(false)">Zurück zur Tabelle</button>
+  <button id="back-to-table-button" type="button" class="btn btn-secondary" (click)="reload(false)">Zurück zur Tabelle</button>
   </div>
 </section>
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BackendService } from '../shared/backend.service';
 import { Todo } from '../shared/todo';
+import {KeyboardNavigation} from "../shared/keyboard-navigation";
 
 @Component({
   selector: 'app-mytasklist',
@@ -58,11 +59,21 @@ export class MytasklistComponent implements OnInit {
   // Z.38: Typisierung ist any, da die response leer sein kann (wenn der Datensatz leer ist) -> ist sie hier aber nicht, Grund ist in der Backend Service
   // Z.40: in der Response ist auch der HTTP-Status
 
-  reload(deleted: boolean)
-  {
+  reload(deleted: boolean) {
     this.deleted = deleted;
     this.readAll();
     this.router.navigateByUrl('/mytasklist');
+
+    if (deleted) {
+      setTimeout(() => {
+        KeyboardNavigation.setFocus('back-to-table-button');
+      }, 0); // Timeout benötigt, um sicherzustellen, dass das Element existiert, bevor der Fokus gesetzt wird
+    } else {
+      // Falls wir zur Startseite zurückkehren, setzen wir den Fokus auf ein spezifisches Element auf der Startseite
+      setTimeout(() => {
+        KeyboardNavigation.setFocus('startseite-button-id');
+      }, 0);
+    }
   }
   // reload()-Fkt. Tabelle wird neugeladen
 

@@ -82,7 +82,7 @@ export class DetailComponent implements OnInit {
   // Z.75: am ende wird wieder die mytasklist Komponente aufgerufen -> navigatebyUrl()-Fkt. des Router-Services
 
   cancel(): void {
-    this.location.back();
+    this.router.navigateByUrl('/mytasklist');
   }
 }
 
