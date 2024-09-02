@@ -58,4 +58,19 @@ mat-icon-button:focus {
   outline-offset: 2px; /* Abstand des Rahmens zum Element anpassen */
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px; /* Versteckt den Link außerhalb des sichtbaren Bereichs */
+  left: 0;
+  background: #005fcc;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0; /* Bringt den Link in den sichtbaren Bereich */
+}
+
 

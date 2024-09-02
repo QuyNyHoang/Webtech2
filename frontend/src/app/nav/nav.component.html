@@ -4,6 +4,7 @@
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menü</mat-toolbar>
+    <a [attr.href]="skipLinkHref" class="skip-link" tabindex="0" (click)="skipToContent()">Zum Hauptinhalt springen</a>
     <mat-nav-list>
       <a mat-list-item [routerLink]="''" tabindex="0">Startseite</a>
       <a mat-list-item [routerLink]="'register'" tabindex="0">Registrieren</a>
