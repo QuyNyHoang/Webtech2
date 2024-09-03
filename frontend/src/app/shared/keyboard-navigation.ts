@@ -1,6 +1,12 @@
 import {Router} from "@angular/router";
+import {Injectable} from "@angular/core";
 
-export class KeyboardNavigation {
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class KeyboardNavigation{
 
   private static router: Router;
 
@@ -75,21 +81,6 @@ export class KeyboardNavigation {
       (focusableElements[newIndex] as HTMLElement).focus();
     }
   }
-  /*case 'ArrowLeft':
-          event.preventDefault();
-          newIndex = Math.max(0, currentIndex - 1);
-          break;
-        case 'ArrowRight':
-          event.preventDefault();
-          newIndex = Math.min(focusableElements.length - 1, currentIndex + 1);
-          break;
-         */
-
-  static handleEscape(event: KeyboardEvent): void {
-    if (event.key === 'Escape') {
-      // Custom escape key handling logic
-    }
-  }
 
   static handleEnter(event: KeyboardEvent): void {
     if (event.key === 'Enter') {
@@ -113,5 +104,4 @@ export class KeyboardNavigation {
       console.log(`Element mit ID ${elementId} nicht gefunden`);
     }
   }
-
 }

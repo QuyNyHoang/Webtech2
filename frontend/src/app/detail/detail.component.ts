@@ -1,5 +1,5 @@
 import { Location } from '@angular/common'; /* Service für back()-Fkt. */
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BackendService } from '../shared/backend.service';
@@ -83,6 +83,14 @@ export class DetailComponent implements OnInit {
 
   cancel(): void {
     this.router.navigateByUrl('/mytasklist');
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      // Schließe das Dialogfenster oder navigiere zurück zur ToDo-Liste
+      this.cancel(); // Oder eine Methode zum Schließen des Dialogs
+    }
   }
 }
 
