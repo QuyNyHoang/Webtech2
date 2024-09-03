@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Todo } from '../shared/todo';
 import { BackendService } from '../shared/backend.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import {KeyboardNavigation} from "../shared/keyboard-navigation";
 
 @Component({
   selector: 'app-create',
@@ -22,10 +23,13 @@ export class CreateComponent {
       beschreibungControl: new FormControl(''),
       fristControl: new FormControl(''),
     });
+
+
   }
   // ngOnInit() wird aufgerufen, wenn die Komponente initialisert wird
   // hier wird ein FormGroup-Objekt erstellt, das die Formularsteuerelemente definiert (Initialisiert mit Standardwert '')
   // this.form wird dann in der create()-Fkt. verwendet
+
 
   create(): void {
 
@@ -71,5 +75,13 @@ export class CreateComponent {
 
   cancel(): void {
     this.location.back();
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      // Schließe das Dialogfenster oder navigiere zurück zur ToDo-Liste
+      this.cancel(); // Oder eine Methode zum Schließen des Dialogs
+    }
   }
 }

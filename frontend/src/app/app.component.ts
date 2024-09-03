@@ -27,7 +27,6 @@ export class AppComponent {
     console.log(`Tastendruck erkannt: ${event.key}`); // Debugging-Ausgabe
     KeyboardNavigation.handleTab(event);
     KeyboardNavigation.handleArrowKeys(event);
-    KeyboardNavigation.handleEscape(event);
     KeyboardNavigation.handleEnter(event);
   }
 }
