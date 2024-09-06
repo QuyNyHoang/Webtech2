@@ -14,7 +14,7 @@
             <label for="username" class="visually-hidden">Nutzername</label>
             <mat-icon matSuffix aria-hidden="true">person_add</mat-icon>
             <mat-error id="username-error" *ngIf="registerForm.controls['username'].hasError('required')">
-              Nutzername <strong>erforderlich</strong>
+              <strong>Nutzername erforderlich</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -28,7 +28,7 @@
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
             <mat-error id="password-error" *ngIf="registerForm.controls['password'].hasError('required')">
-              Passwort <strong>erforderlich</strong>
+              <strong>Passwort erforderlich</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -42,7 +42,7 @@
               <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
             <mat-error id="password2-error" *ngIf="registerForm.controls['password2'].hasError('required')">
-              Wiederholung Passwort <strong>erforderlich</strong>
+              <strong>Wiederholung Passwort erforderlich</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -55,7 +55,7 @@
             <label for="email" class="visually-hidden">E-Mail</label>
             <mat-icon matSuffix>email</mat-icon>
             <mat-error id="email-error" *ngIf="registerForm.controls['email'].hasError('required')">
-              E-Mail-Adresse <strong>erforderlich</strong>
+              <strong>E-Mail-Adresse erforderlich</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -71,7 +71,7 @@
             </mat-select>
             <mat-icon matSuffix>group</mat-icon>
             <mat-error id="role-error" *ngIf="registerForm.controls['role'].hasError('required')">
-              Rolle <strong>erforderlich</strong>
+              <strong>Rolle erforderlich</strong>
             </mat-error>
           </mat-form-field>
         </div>

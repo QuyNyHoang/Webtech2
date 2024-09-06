@@ -4,17 +4,26 @@ main {
   background-size: cover;
 }
 
+header {
+  margin-top: -400px; /* Passt den Abstand oben an, falls gewünscht */
+}
+
+section {
+  margin-top: 20px; /* Fügt Abstand zwischen Header und Abschnitt hinzu */
+  padding: 0 100px;
+}
+
 section p{
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 20px;
   text-align: center;
   display: flex;
   justify-content: center;
-
 }
 
 /* RWD */
 @media screen and (max-width: 767px) {
+
   header{
     font-size: 21px;
   }
@@ -22,6 +31,11 @@ section p{
   section p{
     font-size: 18px;
   }
+}
+
+.btn-custom {
+  background-color: #3f52b5;
+  color: #fff; /* Weißer Text auf dem Button */
 }
 
 /* Stellt sicher, dass der Fokus auf allen interaktiven Elementen gut sichtbar ist */
