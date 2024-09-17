@@ -1,33 +1,46 @@
 <main class="d-flex min-vh-100">
   <section class="container-fluid mt-0 bg-light p-4"> <!-- fluid: Container über die gesamte Breite des Bildschirms oder Viewports erweitert, ohne dass ein horizontaler Margin hinzugefügt wird -->
+    <header>
     <h1 class="mb-4" *ngIf="todo && todo.aufgabe && todo.frist">Aktualisieren von Todo: "{{ todo.aufgabe }}" bis zum "{{ todo.frist }}"</h1>
     <!-- 1. ngIf wird ausgeführt, wenn todo und die angegeben Eigenschaften definiert sind -->
     <h1 class="mb-4" *ngIf="todo && (!todo.aufgabe || !todo.frist)">ToDo aktualisieren</h1>
-    <form [formGroup]="form" (ngSubmit)="update()"> <!-- beim Absenden des Formulars wird update()-Fkt. aufgerufen -->
+    </header>
+
+    <form [formGroup]="form" (ngSubmit)="update()" aria-labelledby="todo-update-title"> <!-- beim Absenden des Formulars wird update()-Fkt. aufgerufen -->
+      <fieldset>
+        <legend id="todo-update-title" class="visually-hidden">Formular zur Aktualisierung eines ToDos</legend>
+
       <div class="row mb-4">
         <div class="col">
           <label class="form-label" for="aufgabe">Aufgabe</label>
-          <input type="text" class="form-control" id="aufgabe" placeholder="Was möchtest du erledigen?" formControlName="aufgabeControl" />
+          <input type="text" class="form-control" id="aufgabe" placeholder="Was möchtest du erledigen?" formControlName="aufgabeControl" aria-describedby="aufgabe-desc"/>
+          <small id="aufgabe-desc" class="visually-hidden">Gib den Titel der Aufgabe ein.</small>
         </div>
       </div>
+
       <div class="row mb-4">
         <div class="col">
           <label class="form-label" for="beschreibung">Beschreibung</label>
-          <input type="text" class="form-control" id="beschreibung" placeholder="Erzähl uns mehr!" formControlName="beschreibungControl" />
+          <input type="text" class="form-control" id="beschreibung" placeholder="Erzähl uns mehr!" formControlName="beschreibungControl" aria-describedby="beschreibung-desc"/>
+          <small id="beschreibung-desc" class="visually-hidden">Gib eine detaillierte Beschreibung der Aufgabe ein.</small>
         </div>
       </div>
+
       <div class="row mb-4">
         <div class="col">
           <label class="form-label" for="frist">Fälligkeitsdatum</label>
-          <input type="text" class="form-control" id="frist" placeholder="TT.MM.JJJJ HH:MM" formControlName="fristControl" />
+          <input type="text" class="form-control" id="frist" placeholder="TT.MM.JJJJ HH:MM" formControlName="fristControl" aria-describedby="frist-desc"/>
+          <small id="frist-desc" class="visually-hidden">Lege ein Fälligkeitsdatum der Aufgabe fest. Beachte das Format für das Datum TT.MM.JJJJ und für die Uhrzeit HH:MM</small>
         </div>
       </div>
+
       <div class="row">
         <div class="col">
           <button type="submit" class="btn btn-primary me-3">Speichern</button>
           <button type="button" class="btn btn-outline-secondary" (click)="cancel()">Abbrechen</button> <!-- am Click-Ereignis angemeldet, ruft die Fkt. cancel() auf -->
         </div>
       </div>
+      </fieldset>
     </form>
   </section>
 </main>
