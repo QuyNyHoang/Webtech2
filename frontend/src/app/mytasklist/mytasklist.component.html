@@ -1,44 +1,49 @@
-<section *ngIf="!deleted" class="container-fluid mt-0 bg-light p-3 shadow" id="mytasklist-content"> <!-- "container" deutet darauf, dass der Code das Raster-System des Bootstrap-Frameworks für responsives Layout verwendt -->
+<section *ngIf="!deleted" class="container-fluid mt-0 bg-light p-3 shadow" id="mytasklist-content" aria-labelledby="mytasklist-header">
+  <!-- "container" deutet darauf, dass der Code das Raster-System des Bootstrap-Frameworks für responsives Layout verwendt -->
 
   <header>
-    <h2 class="m-3">Alle ToDos</h2>
+    <h2 id="mytasklist-header" class="m-3">Alle ToDos</h2>
   </header>
 
   <p class="d-flex justify-content-center my-3">
-    <button id="startseite-button-id" type="button" class="btn btn-lg btn-outline-primary btn-block w-50 text-center" (click)="ClickEvent()">Neue ToDo erstellen</button>
+    <button id="startseite-button-id" type="button" class="btn btn-lg btn-outline-primary btn-block w-50 text-center"
+            (click)="ClickEvent()" aria-label="Neue ToDo erstellen">Neue ToDo erstellen
+    </button>
   </p>
 
-  <section class="table-responsive mx-3"> <!-- RWD eingebaut -->
-    <table class="table table-bordered table-striped table-hover text-left"> <!-- text-left macht es linksbündig -->
-      <caption>Liste aller ToDos</caption>
+  <section class="table-responsive mx-3" aria-labelledby="mytasklist-table-caption"> <!-- RWD eingebaut -->
+    <table class="table table-bordered table-striped table-hover text-left" aria-describedby="mytasklist-table-caption"> <!-- text-left macht es linksbündig -->
+      <caption id="mytasklist-table-caption">Liste aller ToDos</caption>
       <thead>
-        <tr>
-          <th scope="col" class="col-1">Nr.</th> <!-- scope sagt aus, dass es sich um Spaltenüberschrift handelt -->
-          <th scope="col" class="col-3">Aufgabe</th>
-          <th scope="col" class="col-4">Beschreibung</th>
-          <th scope="col" class="col-2">Fälligkeitsdatum</th>
-          <th scope="col" class="col-1">Optionen</th>
-          <th scope="col" class="col-1">Erledigt?</th>
-        </tr>
+      <tr>
+        <th scope="col" class="col-1" id="header-nr">Nr.</th> <!-- scope sagt aus, dass es sich um Spaltenüberschrift handelt -->
+        <th scope="col" class="col-3" id="header-aufgabe">Aufgabe</th>
+        <th scope="col" class="col-4" id="header-beschreibung">Beschreibung</th>
+        <th scope="col" class="col-2" id="header-frist">Fälligkeitsdatum</th>
+        <th scope="col" class="col-1" id="header-optionen">Optionen</th>
+        <th scope="col" class="col-1" id="header-erledigt">Erledigt?</th>
+      </tr>
       </thead>
       <tbody>
-        <!-- Array (todos) wird in der hier ausgelesen -->
-        <!-- Wir verwenden dazu wieder die *ngFor-Direktive -->
-        <tr *ngFor="let todo of todos; let i=index;">
-          <td>{{ i+1 }}</td>
-          <td>{{ todo.aufgabe }}</td>
-          <td>{{ todo.beschreibung }}</td>
-          <td>{{ todo.frist }}</td>
-          <td>
-            <a id="edit-{{i}}" [routerLink]="['/todo', todo._id]" aria-label="Bearbeiten">
-              <span tabindex="0" class="bi bi-pencil-square px-2 text-primary"></span>
-            </a> <!-- text-primary ist blaue Farbe -->
-            <span tabindex="0" (click)="delete(todo._id)" class="bi bi-trash px-2 text-danger"></span> <!-- text-danger ist rote Farbe -->
-          </td>
-          <td class="box">
-            <input id="todo-checkbox-{{i}}"  type="checkbox" (click)="erledigt(todo)" [checked]="todo.erledigt" aria-label="Erledigt"> <!-- bindet den checked Wert an todo.erledigt, wenn true, wird die Checkbox angeklickt -->
-          </td>
-        </tr>
+      <!-- Array (todos) wird in der hier ausgelesen -->
+      <!-- Wir verwenden dazu wieder die *ngFor-Direktive -->
+      <tr *ngFor="let todo of todos; let i=index;" [attr.aria-labelledby]="'todo-row-' + i">
+        <td id="todo-row-{{i}}" aria-labelledby="header-nr">{{ i + 1 }}</td>
+        <td tabindex="0" aria-labelledby="header-aufgabe" [attr.aria-label]="'Aufgabe: ' + todo.aufgabe">{{ todo.aufgabe }}</td>
+        <td tabindex="0" aria-labelledby="header-beschreibung" [attr.aria-label]="'Beschreibung: ' + todo.beschreibung">{{ todo.beschreibung }}</td>
+        <td tabindex="0" aria-labelledby="header-frist" [attr.aria-label]="'Fälligkeitsdatum: ' + todo.frist">{{ todo.frist }}</td>
+        <td aria-labelledby="header-optionen">
+          <a id="edit-{{i}}" [routerLink]="['/todo', todo._id]" [attr.aria-label]="'Bearbeiten Aufgabe ' + todo.aufgabe">
+            <span tabindex="0" class="bi bi-pencil-square px-2 text-primary"></span>
+          </a> <!-- text-primary ist blaue Farbe -->
+          <span tabindex="0" (click)="delete(todo._id)" class="bi bi-trash px-2 text-danger" [attr.aria-label]="'Aufgabe ' + todo.aufgabe + ' löschen'"></span>
+          <!-- text-danger ist rote Farbe -->
+        </td>
+        <td class="box">
+          <input id="todo-checkbox-{{i}}" type="checkbox" (click)="erledigt(todo)" [checked]="todo.erledigt" [attr.aria-checked]="todo.erledigt" aria-label="Erledigt" aria-describedby="header-erledigt">
+          <!-- bindet den checked Wert an todo.erledigt, wenn true, wird die Checkbox angeklickt -->
+        </td>
+      </tr>
       </tbody>
     </table>
   </section>
@@ -50,7 +55,9 @@
   </header>
 
   <div>
-  <button id="back-to-table-button" type="button" class="btn btn-secondary" (click)="reload(false)">Zurück zur Tabelle</button>
+    <button id="back-to-table-button" type="button" class="btn btn-secondary" (click)="reload(false)" aria-label="Zurück zur Tabelle">Zurück zur
+      Tabelle
+    </button>
   </div>
 </section>
 

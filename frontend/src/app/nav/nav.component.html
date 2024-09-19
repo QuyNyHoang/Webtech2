@@ -4,15 +4,16 @@
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menü</mat-toolbar>
-    <a [attr.href]="skipLinkHref" class="skip-link" tabindex="0" (click)="skipToContent()">Zum Hauptinhalt springen</a>
+    <a [attr.href]="skipLinkHref" class="skip-link" tabindex="0" (click)="skipToContent()" aria-label="Zum Hauptinhalt springen">Zum Hauptinhalt springen</a>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="''" tabindex="0">Startseite</a>
-      <a mat-list-item [routerLink]="'register'" tabindex="0">Registrieren</a>
-      <a mat-list-item [routerLink]="'login'" tabindex="0">Einloggen</a>
-      <a mat-list-item [routerLink]="'mytasklist'" tabindex="0">Meine ToDos</a>
-      <a mat-list-item [routerLink]="'userlist'" tabindex="0">Alle Nutzerinnen</a>
+      <a mat-list-item [routerLink]="''" tabindex="0" aria-label="Startseite">Startseite</a>
+      <a mat-list-item [routerLink]="'register'" tabindex="0" aria-label="Registrieren">Registrieren</a>
+      <a mat-list-item [routerLink]="'login'" tabindex="0" aria-label="Einloggen">Einloggen</a>
+      <a mat-list-item [routerLink]="'mytasklist'" tabindex="0" aria-label="Meine ToDos">Meine ToDos</a>
+      <a mat-list-item [routerLink]="'userlist'" tabindex="0" aria-label="Alle Nutzerinnen">Alle Nutzerinnen</a>
     </mat-nav-list>
   </mat-sidenav>
+
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="flex">
       <button class="left"
@@ -24,7 +25,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span class="left">ToDoodle</span>
-      <button *ngIf="!isLoggedIn" mat-icon-button class="right" (click)="callLogin()">
+      <button *ngIf="!isLoggedIn" mat-icon-button class="right" (click)="callLogin()" aria-label="Login">
         <mat-icon>login</mat-icon>
       </button>
       <div *ngIf="isLoggedIn" class="right">

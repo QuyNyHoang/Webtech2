@@ -11,28 +11,33 @@
       <fieldset>
         <legend id="todo-form-title" class="visually-hidden">Neue ToDo erstellen</legend>
 
-  <!-- Eingabefeld für Aufgabe -->
-      <div class="form-group mb-4">
+        <!-- Eingabefeld für Aufgabe -->
+        <div class="form-group mb-4">
           <label class="form-label" for="aufgabe">Aufgabe</label>
-          <input type="text" class="form-control" id="aufgabe" placeholder="Was möchtest du erledigen?" formControlName="aufgabeControl" aria-describedby="aufgabe-desc" />
+          <input type="text" class="form-control" id="aufgabe" placeholder="Was möchtest du erledigen?"
+                 formControlName="aufgabeControl" aria-describedby="aufgabe-desc"/>
           <small id="aufgabe-desc" class="visually-hidden">Gib eine Aufgabe ein, die erledigt werden soll.</small>
         </div>
 
-  <!-- Eingabefeld für Beschreibung -->
-      <div class="form-group mb-4">
+        <!-- Eingabefeld für Beschreibung -->
+        <div class="form-group mb-4">
           <label class="form-label" for="beschreibung">Beschreibung</label>
-          <input type="text" class="form-control" id="beschreibung" placeholder="Erzähl uns mehr!" formControlName="beschreibungControl" aria-describedby="beschreibung-desc"/>
-        <small id="beschreibung-desc" class="visually-hidden">Gib eine detaillierte Beschreibung zu deiner Aufgabe.</small>
-      </div>
-
- <!-- Eingabefeld für Fälligkeitsdatum -->
-      <div class="form-group mb-4">
-          <label class="form-label" for="frist">Fälligkeitsdatum</label>
-          <input type="text" class="form-control" id="frist" placeholder="TT.MM.JJJJ HH:MM" formControlName="fristControl" aria-describedby="frist-desc"/>
-          <small id="frist-desc" class="visually-hidden">Lege ein Fälligkeitsdatum der Aufgabe fest. Beachte das Format für das Datum TT.MM.JJJJ und für die Uhrzeit HH:MM</small>
+          <input type="text" class="form-control" id="beschreibung" placeholder="Erzähl uns mehr!"
+                 formControlName="beschreibungControl" aria-describedby="beschreibung-desc"/>
+          <small id="beschreibung-desc" class="visually-hidden">Gib eine detaillierte Beschreibung zu deiner
+            Aufgabe.</small>
         </div>
 
-  <!-- Button-Gruppe für Formularaktionen -->
+        <!-- Eingabefeld für Fälligkeitsdatum -->
+        <div class="form-group mb-4">
+          <label class="form-label" for="frist">Fälligkeitsdatum</label>
+          <input type="text" class="form-control" id="frist" placeholder="TT.MM.JJJJ HH:MM"
+                 formControlName="fristControl" aria-describedby="frist-desc"/>
+          <small id="frist-desc" class="visually-hidden">Lege ein Fälligkeitsdatum der Aufgabe fest. Beachte das Format
+            für das Datum TT.MM.JJJJ und für die Uhrzeit HH:MM</small>
+        </div>
+
+        <!-- Button-Gruppe für Formularaktionen -->
         <div class="form-group">
           <button type="submit" class="btn btn-primary me-3">Speichern</button>
           <button type="button" class="btn btn-outline-secondary" (click)="cancel()">Abbrechen</button>

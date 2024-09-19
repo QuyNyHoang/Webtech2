@@ -15,8 +15,8 @@ import { User } from '../shared/user';
 export class NavComponent {
   isLoggedIn = false;
   username: String = '';
-  skipLinkHref = '#'; // Standardmäßig auf ein generisches ID
-  @ViewChild('') homeContent!: ElementRef;
+  skipLinkHref = '#mytasklist-content'; // Standardmäßig auf ein generisches ID
+  @ViewChild('mytasklist', { static: false }) mytasklistContent!: ElementRef;
 
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -65,23 +65,21 @@ export class NavComponent {
 
   updateSkipLink(url: string): void {
     // Setze den Skip-Link basierend auf der aktuellen Route
-    if (url.includes('register')) {
-      this.skipLinkHref = '#register-content';
-    } else if (url.includes('login')) {
-      this.skipLinkHref = '#login-content';
-    } else if (url.includes('mytasklist')) {
+    if (url.includes('mytasklist')) {
       this.skipLinkHref = '#mytasklist-content';
-    } else if (url.includes('userlist')) {
-      this.skipLinkHref = '#userlist-content';
     } else {
-      this.skipLinkHref = '#'; // Standardmäßig auf Startseite
+      this.skipLinkHref = '#'; // Sonst auf keinen Link setzen
     }
     console.log('Skip link updated to:', this.skipLinkHref); // Debug-Ausgabe
   }
 
   skipToContent() {
-    if (this.homeContent) {
-      this.homeContent.nativeElement.focus();
+    if (this.skipLinkHref === '#mytasklist-content') {
+      const element = document.querySelector(this.skipLinkHref) as HTMLElement;
+      if (element) {
+        element.focus();
+        element.scrollIntoView({behavior: 'smooth'});
+      }
     }
   }
 }
