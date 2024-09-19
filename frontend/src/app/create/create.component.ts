@@ -15,7 +15,7 @@ export class CreateComponent {
   todos!: Todo[];
   form!: FormGroup;
 
-  constructor(private bs: BackendService, private router: Router,private location: Location) {}
+  constructor(private bs: BackendService, private router: Router) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -74,7 +74,7 @@ export class CreateComponent {
   // Callback-Funktionen werden oft in asynchronen Operationen verwendet, bei denen wir auf eine Antwort warten müssen, bevor wir mit der nächsten Aktion fortfahren können.
 
   cancel(): void {
-    this.location.back();
+    this.router.navigate(['/mytasklist']);
   }
 
   @HostListener('window:keydown', ['$event'])
