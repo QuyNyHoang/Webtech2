@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { BackendService } from '../shared/backend.service';
 import { Todo } from '../shared/todo';
 import {KeyboardNavigation} from "../shared/keyboard-navigation";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-mytasklist',
@@ -88,6 +89,14 @@ export class MytasklistComponent implements OnInit {
       console.log('erledigt wurde aktualisiert'); // dient nur der Kontrolle
     });
   }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      this.router.navigate(['/mytasklist']);
+    }
+  }
+
   // Z.74: übergeben Todo Objekt, dessen Checkbox angeklickt wird
   // Z.75: todo.erledigt wird durch Negation geändert, also aus true wird false und umgekehrt
   // Z.76: update()-Fkt. von BackendService wird aufgerufen, um Daten an den Server zu senden und die DB zu aktualisieren
