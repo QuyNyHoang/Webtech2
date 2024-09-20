@@ -18,46 +18,37 @@ th, td {
   justify-content: center;
 }
 
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-}
 caption {
   caption-side: top; /* Sicherstellen, dass die Caption oben angezeigt wird */
 }
-/* Fokus-Stil für Buttons */
+
+/*Fokus-Stil für Tabellenzellen */
+td:focus,
+th:focus,
 button:focus {
   outline: 3px solid #005fcc; /* Farbe des Fokusrands */
   outline-offset: 2px; /* Abstand des Randes vom Element */
 }
 
-/* Fokus-Stil für Links (Bearbeiten-Symbol) */
-a:focus {
-  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
-  outline-offset: 2px; /* Abstand des Randes vom Element */
+td[aria-labelledby="header-optionen"] .bi-pencil-square,
+td[aria-labelledby="header-optionen"] .bi-trash {
+  font-size: 24px; /* Größe der Icons */
+  width: 24px;
+  height: 24px;
+  cursor: pointer; /* Zeigt an, dass es klickbar ist */
+  display: inline-flex; /* Inline-Flex für bessere Kontrolle */
+  align-items: center; /* Zentriert das Icon vertikal */
+  justify-content: center; /* Zentriert das Icon horizontal */
+  margin-right: 5px;
+  margin-left: 5px;
+  outline-offset: 2px;
 }
 
-/* Fokus-Stil für Löschen-Symbol */
-.button:focus {
-  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
-  outline-offset: 2px; /* Abstand des Randes vom Element */
-}
-
-/* Fokus-Stil für Checkboxen */
-input[type="checkbox"]:focus {
-  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
-  outline-offset: 2px; /* Abstand des Randes vom Element */
-}
-
-/* Optional: Fokus-Stil für Tabellenzellen */
-td:focus,
-th:focus {
-  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
-  outline-offset: 2px; /* Abstand des Randes vom Element */
-}
-
-/* Fokus-Stil für Löschen-Symbol */
-.bi-trash:focus {
-  outline: 3px solid #005fcc; /* Farbe des Fokusrands */
-  outline-offset: 2px; /* Abstand des Randes vom Element */
+/* Checkbox-Größe anpassen */
+td.box input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: 20px;
+  outline-offset: 2px;
 }

@@ -6,7 +6,7 @@ import {Injectable} from "@angular/core";
   providedIn: 'root'
 })
 
-export class KeyboardNavigation{
+export class KeyboardNavigation {
 
   private static router: Router;
 
@@ -53,30 +53,30 @@ export class KeyboardNavigation{
         event.preventDefault();
         newIndex = Math.min(focusableElements.length - 1, currentIndex + 1);
         break;
-          case 'ArrowLeft':
-            event.preventDefault();
-            // Fokus auf das erste Element in der Navigation setzen
-            const navElement = document.querySelector('mat-nav-list a') as HTMLElement;
-            if (navElement) {
-              navElement.focus();
-              console.log('Fokus auf Startseite gesetzt');
-            } else {
-              console.log('Kein Navigationselement gefunden');
-            }
-            return;
-          case 'ArrowRight':
-            event.preventDefault();
-            setTimeout(() => {
-              const mainElement = document.querySelector('router-outlet + * input, router-outlet + * button, router-outlet + * textarea, router-outlet + * select, router-outlet + * [tabindex]') as HTMLElement;
-              if (mainElement) {
-                mainElement.focus();
-                console.log('Fokus auf Hauptelement gesetzt');
-              } else {
-                console.log('Kein Hauptkomponentenelement gefunden');
-              }
-            }, 0);
-            return;
+      case 'ArrowLeft':
+        event.preventDefault();
+        // Fokus auf das erste Element in der Navigation setzen
+        const navElement = document.querySelector('mat-nav-list a') as HTMLElement;
+        if (navElement) {
+          navElement.focus();
+          console.log('Fokus auf Startseite gesetzt');
+        } else {
+          console.log('Kein Navigationselement gefunden');
         }
+        return;
+      case 'ArrowRight':
+        event.preventDefault();
+        setTimeout(() => {
+          const mainElement = document.querySelector('router-outlet + * input, router-outlet + * button, router-outlet + * textarea, router-outlet + * select, router-outlet + * [tabindex]') as HTMLElement;
+          if (mainElement) {
+            mainElement.focus();
+            console.log('Fokus auf Hauptelement gesetzt');
+          } else {
+            console.log('Kein Hauptkomponentenelement gefunden');
+          }
+        }, 0);
+        return;
+    }
     if (focusableElements[newIndex]) {
       (focusableElements[newIndex] as HTMLElement).focus();
     }

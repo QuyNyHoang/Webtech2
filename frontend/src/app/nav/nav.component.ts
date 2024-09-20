@@ -64,6 +64,7 @@ export class NavComponent {
   }
 
   updateSkipLink(url: string): void {
+    console.log('Aktuelle URL:', url); // Debugging-Ausgabe
     // Setze den Skip-Link basierend auf der aktuellen Route
     if (url.includes('mytasklist')) {
       this.skipLinkHref = '#mytasklist-content';
