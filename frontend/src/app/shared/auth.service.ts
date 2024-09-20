@@ -21,7 +21,8 @@ export class AuthService {
     });
     this.userChange.subscribe((value) => {
       this.user = value
-    }); // gehört zum subject, um zu erkennen, ob userin eingelogged ist oder nicht
+    });
+    // gehört zum subject, um zu erkennen, ob userin eingelogged ist oder nicht
   }
 
   getAllUsers(): Observable<User[]>{

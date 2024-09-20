@@ -58,6 +58,13 @@ mat-icon-button:focus {
   outline-offset: 2px; /* Abstand des Rahmens zum Element anpassen */
 }
 
+.logout-button:focus,
+.logout-button:hover {
+  background-color:#f8f9fa; /* Hintergrundfarbe beim Fokus */
+  color: #3f52b5;
+}
+
+
 .skip-link {
   position: absolute;
   top: -40px; /* Versteckt den Link außerhalb des sichtbaren Bereichs */
