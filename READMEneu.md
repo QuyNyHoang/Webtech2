@@ -273,7 +273,7 @@ td[aria-labelledby="header-optionen"] .bi-trash {
 
 vorher:
 
-![Buttons_vorher](frontend/src/assets/Bildschirmfoto 2024-09-20 um 23.11.48.png)
+![Buttons_vorher](frontend/src/assets/Buttons_vorher1.png)
 
 nachher:
 
