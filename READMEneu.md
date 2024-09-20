@@ -76,7 +76,7 @@ Implemntierung in der nav.component.html
 ```html
 <a [attr.href]="skipLinkHref" class="skip-link" tabindex="0" (click)="skipToContent()" aria-label="Zum Hauptinhalt springen">Zum Hauptinhalt springen</a>
 ```
-![Skip-Link Beispiel](src/assets/skiplink.png)
+![Skip-Link Beispiel](frontend/src/assets/skiplink.png)
 
 
 ---
@@ -118,12 +118,12 @@ Der sichtbare Fokusring wurde für alle interaktiven Elemente eingeführt, um kl
 
 **Umsetzung**:
 
-- HTML-Anpassungen: Interaktive Elemente wie `<a mat-list-item>` und durch das Hinzufügen von `tabindex="0"` haben eine sichtbare Fokusumrandung.
+- HTML-Anpassungen: Interaktive Elemente wie `<a mat-list-item>` erhalten durch das Hinzufügen von tabindex="0" eine sichtbare Fokusmarkierung, die ihre Tastaturnavigation verbessert.
 
 
 - CSS-Anpassungen: Fokus-Stile wie `outline` für fokussierte Elemente (Links, Buttons, Inputs) hinzugefügt, um sicherzustellen, dass der Fokus-Ring sichtbar ist und die Tastaturnavigation erleichtert
 
-![](src/assets/fokusring.png)
+![](frontend/src/assets/fokusring.png)
 
 ---
 
@@ -146,14 +146,6 @@ In der **register.component.html** wurden mehrere Anpassungen vorgenommen, um si
   - **Funktionale Icons:** Icons mit Funktion, wie z.B. das Passwort-Anzeige-Icon, verwenden dynamische `aria-label` Attribute, die den aktuellen Zustand beschreiben (z.B. „Passwort anzeigen“ oder „Passwort verbergen“).
 
     `aria-pressed` kennzeichnet den Zustand der Schaltfläche („gedrückt“ oder „nicht gedrückt“), was für assistive Technologien nützlich ist.
-
-
-**Beschreibungen von Eingabefeldern und Fehlermeldungen:**
-  - Eingabefelder sind mit `aria-describedby` versehen, das auf Fehlermeldungen verweist (z.B. `aria-describedby="username-error"`), damit Screenreader die Fehlermeldungen und Hilfstexte vorlesen.
-
-
-- **Visuell versteckte Labels:**
-  - Für Eingabefelder wurden visuell versteckte Labels (`<label class="visually-hidden">`) hinzugefügt, die von Screenreadern erkannt werden und klare textuelle Beschreibungen bieten.
 
 ---
 
@@ -197,7 +189,7 @@ Ein `<small>`Element mit der Klasse `visually-hidden` wurde hinzugefügt, um zus
 
 ### 3.4 Erfolgskriterium 1.4.3 „Kontrast (Minimum)“
 
-Die Kontrastverhältnisse in der `home.component` wurden mithilfe der Website [Accessible Colors](https://accessible-colors.com/) überprüft. Dabei wurden sowohl die Schriftfarbe auf den Hintergrund als auch die Farben der Buttons und deren Schriftfarben getestet, um sicherzustellen, dass die Kontrastanforderungen gemäß den WCAG-Richtlinien erfüllt sind.
+Das Erfolgskriterium stellt sicher, dass Text und Bilder einen ausreichenden Farbkontrast zum Hintergrund aufweisen. Die Kontrastverhältnisse in der `home.component` wurden mithilfe der Website [Accessible Colors](https://accessible-colors.com/) überprüft. 
 
 **Mehrwert**: Durch die Verbesserung des Kontrasts wird die Lesbarkeit der Inhalte deutlich erhöht, insbesondere für Nutzer mit Sehbehinderungen.
 
@@ -209,8 +201,12 @@ Die Kontrastverhältnisse in der `home.component` wurden mithilfe der Website [A
 - Anpassung der Buttonfarbe von Grau zu Blau, da ein hellgrauer Button mit weißer Schrift nicht genug Kontrast bietet, wurde die Farbe auf Blau geändert mit weißer Schrift für einen ausreichenden Kontrast.
 
 
-vorher:![](src/assets/home_vorher.png)
-nachher:![](src/assets/home_nachher.png)
+vorher:
+![](frontend/src/assets/home_vorher.png)
+
+
+nachher:
+![](frontend/src/assets/home_nachher.png)
 ---
 
 
@@ -232,9 +228,12 @@ Das Kriterium stellt sicher, dass der Tastaturfokus deutlich sichtbar ist, wenn 
 }
 ```
 vorher:
-![](src/assets/logout_button_vorher.png)
+
+![](frontend/src/assets/logout_button_vorher.png)
+
 nachher:
-![](src/assets/logout_button_nachher.png)
+
+![](frontend/src/assets/logout_button_nachher.png)
 
 
 ---
@@ -272,13 +271,13 @@ td[aria-labelledby="header-optionen"] .bi-trash {
 }
 ```
 
-**vorher:**
+vorher:
 
-![](src/assets/buttons_vorher.png)
+![Buttons_vorher](frontend/src/assets/Bildschirmfoto 2024-09-20 um 23.11.48.png)
 
 nachher:
 
-![](src/assets/buttons_nachher.png)
+![Buttons nachher](frontend/src/assets/buttons_nachher.png)
 
 
 ---
