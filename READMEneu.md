@@ -46,11 +46,6 @@ Es wurden semantische HTML5-Elemente verwendet, um den Inhalt klar zu strukturie
     Die `<table>`Elemente sind besonders nützlich, um tabellarische Daten klar zu strukturieren und zu beschreiben.
     Das `scope`Attribut in den `<th>`Elementen ist auch wichtig, um die Beziehungen zwischen Tabellenzellen und ihren Überschriften für assistive Technologien klarzustellen.
 
-
-- **Interaktive Elemente**: 
-
-  Es gibt eine klar definierte Schaltfläche, die durch ARIA-Attribute unterstützt werden, was zusätzliche Informationen für Screenreader liefert.
-
 ---
 
 ### 2.2 Sprache im Dokument
@@ -202,10 +197,12 @@ Das Erfolgskriterium stellt sicher, dass Text und Bilder einen ausreichenden Far
 
 
 vorher:
+
 ![](frontend/src/assets/home_vorher.png)
 
 
 nachher:
+
 ![](frontend/src/assets/home_nachher.png)
 ---
 
@@ -240,7 +237,7 @@ nachher:
 
 ###  Erfolgskriterium 2.5.8 „ Zielgröße“
 
-Die Implementierung des Kriteriums 2.5.8 stellt sicher, dass alle interaktiven Ziele, wie Schaltflächen und Links, eine Mindestgröße von 24x24 CSS-Pixeln haben.
+Die Implementierung des Kriteriums stellt sicher, dass alle interaktiven Ziele, wie Schaltflächen und Links, eine Mindestgröße von 24x24 CSS-Pixeln haben.
 
 **Mehrwert:** Dies gewährleistet, dass sie für alle Benutzer leicht anklickbar sind, insbesondere für Personen mit motorischen Einschränkungen.
 
@@ -248,7 +245,7 @@ Die Implementierung des Kriteriums 2.5.8 stellt sicher, dass alle interaktiven Z
 
 - **Größeneinstellung:**
 
-  Die CSS-Regeln wurden angepasst da einige interaktiven Elemente zu klein waren.
+  Die CSS-Regeln wurden angepasst, da einige interaktiven Elemente zu klein waren.
 
 - **Zentrierung der Elemente:**
 
